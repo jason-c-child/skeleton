@@ -3,7 +3,7 @@ import EventEmitter from 'events'
 import 'whatwg-fetch'
 import logo from './logo.svg';
 import './App.css';
-import { fetchEndpoint, asyncFetchPost } from './helpers'
+import { fetchEndpoint } from './helpers'
 import PostList from './PostList'
 
 // setup a skeletal state
@@ -48,7 +48,7 @@ class App extends Component {
 
   componentDidMount () {
     fetchEndpoint()
-      .then(x => State.emit('update', {posts: x}))
+      .then(x => State.emit('update', { posts: x }))
   }
 
   render () {
